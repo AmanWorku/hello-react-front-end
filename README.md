@@ -29,6 +29,8 @@
 
 > Hello React Frontend is a react project that calls a backend for rendering greeting messages that is served by a ruby on rails api on the home page.
 
+#### Backend repo is found [here](https://github.com/AmanWorku/hello-rails-back-end)
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
