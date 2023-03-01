@@ -27,7 +27,7 @@
 
 # 📖 [Hello React Frontend] <a name="about-project"></a>
 
-> Hello Rails React is a simple web app that combines functionalities of Ruby on Rails and React. It allows users to get a random greeting from the backend API. You can use the button to displ
+> Hello React Frontend is a react project that calls a backend for rendering greeting messages that is served by a ruby on rails api on the home page.
 
 ## 🛠 Built With <a name="built-with"></a>
 
