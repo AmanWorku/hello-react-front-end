@@ -22,7 +22,7 @@ export default greetingsSlice.reducer;
 const fetchGreetings = () => {
 	return async (dispatch) => {
 		try {
-			const res = await fetch("http://127.0.0.1:3000/");
+			const res = await fetch("http://127.0.0.1:3000");
 			const data = await res.json();
 			dispatch(setGreetings(data));
 		} catch (error) {
