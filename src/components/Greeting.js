@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { fetchRandomGreeting } from "./redux/actions";
 
-function Greeting() {
-	const [greeting, setGreeting] = useState("");
-
+function Greeting({ greeting, fetchRandomGreeting }) {
 	useEffect(() => {
-		fetch("/api/v1/greetings")
-			.then((response) => response.json())
-			.then((data) => setGreeting(data.greeting));
-	}, []);
+		fetchRandomGreeting();
+	}, [fetchRandomGreeting]);
 
 	return (
 		<div>
@@ -17,4 +15,8 @@ function Greeting() {
 	);
 }
 
-export default Greeting;
+const mapStateToProps = (state) => ({
+	greeting: state.greeting,
+});
+
+export default connect(mapStateToProps, { fetchRandomGreeting })(Greeting);
