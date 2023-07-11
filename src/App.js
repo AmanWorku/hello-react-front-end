@@ -1,14 +1,14 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Greeting from "./components/Greeting";
 
 function App() {
 	return (
-		<div>
+		<BrowserRouter>
 			<Routes>
 				<Route exact path="/" component={Greeting} />
 			</Routes>
-		</div>
+		</BrowserRouter>
 	);
 }
 

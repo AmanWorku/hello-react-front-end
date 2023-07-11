@@ -1,6 +1,6 @@
 export const fetchRandomGreeting = () => {
 	return (dispatch) => {
-		fetch("/api/v1/greetings")
+		fetch("http://127.0.0.1:3000//api/v1/greetings")
 			.then((response) => response.json())
 			.then((data) => {
 				dispatch(setRandomGreeting(data.greeting));
