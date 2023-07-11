@@ -1,14 +1,14 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Greeting from "./Greeting";
+import { Routes, Route } from "react-router-dom";
+import Greeting from "./components/Greeting";
 
 function App() {
 	return (
-		<Router>
-			<Switch>
+		<div>
+			<Routes>
 				<Route exact path="/" component={Greeting} />
-			</Switch>
-		</Router>
+			</Routes>
+		</div>
 	);
 }
 

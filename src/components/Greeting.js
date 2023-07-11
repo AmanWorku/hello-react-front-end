@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchRandomGreeting } from "./redux/actions";
+import { fetchRandomGreeting } from "../redux/actions";
 
 function Greeting({ greeting, fetchRandomGreeting }) {
 	useEffect(() => {
