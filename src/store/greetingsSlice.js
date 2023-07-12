@@ -9,9 +9,10 @@ const greetingsSlice = createSlice({
   name: 'greetings',
   initialState,
   reducers: {
-    setGreetings: (state, action) => {
-      state.greetings = action.payload;
-    },
+    setGreetings: (state, action) => ({
+      ...state,
+      greetings: action.payload,
+    }),
   },
 });
 
@@ -21,7 +22,7 @@ export default greetingsSlice.reducer;
 
 const fetchGreetings = () => async (dispatch) => {
   try {
-    const res = await fetch('http://localhost:3000/');
+    const res = await fetch('http://127.0.0.1:3000/');
     const data = await res.json();
     dispatch(setGreetings(data));
   } catch (error) {
