@@ -1,20 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchGreetings } from '../store/greetingsSlice';
 
-function Greeting() {
-	const [greeting, setGreeting] = useState("");
+function Greetings() {
+  const dispatch = useDispatch();
+  const greetingsData = useSelector((state) => state.greetings.greetings);
 
-	useEffect(() => {
-		fetch("/api/v1/greetings")
-			.then((response) => response.json())
-			.then((data) => setGreeting(data.greeting));
-	}, []);
+  useEffect(() => {
+    dispatch(fetchGreetings());
+  }, [dispatch]);
 
-	return (
-		<div>
-			<h1>Random Greeting:</h1>
-			<p>{greeting}</p>
-		</div>
-	);
+  return (
+    <div className="center">
+      <button
+        type="button"
+        onClick={() => dispatch(fetchGreetings())}
+        className="greeting-btn"
+      >
+        Press Me
+      </button>
+      {greetingsData && <h1>{greetingsData.greeting}</h1>}
+    </div>
+  );
 }
 
-export default Greeting;
+export default Greetings;
